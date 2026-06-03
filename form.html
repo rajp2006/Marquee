@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color: blue ;">Form Validation</p>
+    <form action="register" method="post">
+        <fieldset > 
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="eg. Raj" required minlength="3" maxlength="20" value="Rajkumar" readonly autocomplete="name">
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="eg. example.@gmail.com" required>
+        <br><br>
+        <label for="Password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" maxlength="16">
+        <br><br>
+        <label for="Search">Search:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="Phone">Phone:</label>
+        <input type="number" id="phone" name="phone" placeholder="eg. 1234567890" required>
+        <br><br>
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" placeholder="eg. https://www.google.com" required>
+        <br>
+        </fieldset>
+        <br><br>
+        <fieldset> 
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="eg. 18" required min="18" max="60" step="2">
+            <br><br>
+            <label for="volume">Volume:</label>
+            <input type="range" id="volume" name="volume" min="0" max="100">
+            <br><br>
+            <label for="Date & Time">Date & Time:</label>
+            <input type="datetime-local" id="datetime" name="datetime" required>
+            <br><br>
+        </fieldset>
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <br>
+    <video controls
+autoplay
+muted
+loop
+width="300"
+height="150">
+<source src="C:\Users\Raj\Pictures\nayanpatidar01[HD]_1756497188_musicaldown.com.mp4" type="video/mp4">
+
+</video>
+<audio controls>
+    <source src="C:\Users\Raj\Downloads\leberch-funny-kids-525160.mp3" type="audio/mp3">
+</audio>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WrHgwPsEMdQ?si=i4RgFygdiH71oJaA" title="YouTube video player" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</body>
+</html>
