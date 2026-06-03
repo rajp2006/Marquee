@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            border: none;
+            outline: none;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2> Sports Physical Form</h2>
+    <form action="index.html" method="get">
+        <fieldset>
+            <legend>Information</legend> 
+            <ul>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your Name">
+                </li>
+                <li>
+                    <label for="sct">School/Team:</label>
+                    <input type="text" name="School/Team" id="sct">
+                </li>
+                <li>
+                    <label for="sport">Sport:</label>
+                    <input type="text" name="sport" id="sport" placeholder="Enter your Sport">
+                </li>
+                <li>
+                    <label for="name">parent/Guardian Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your guardians Name">
+                </li>
+                <li>
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" name="contact" id="contact" minlength="10" maxlength="10">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Medical History</legend>
+            <ul>
+                <li>
+                    history of concussions:
+                    <input type="radio" name="concussions" id="conyes" >
+                    <label for="conyes">Yes</label>
+                    <input type="radio" name="concussions" id="conno">
+                    <label for="conno">No</label>
+                </li>
+                <li>
+                    <label for="surgeries">Previous Surgeries:</label>
+                    <input type="text" name="Previous surgeries" id="surgeries">
+                </li>
+                <li>
+                    Any bone fractures?
+                    <input type="radio" name="fractures" id="frayes" >
+                    <label for="frayes">Yes</label>
+                    <input type="radio" name="fractures" id="frano">
+                    <label for="frano">No</label>
+                </li>
+                <li>
+                    Asthama or breathing problems?
+                    <input type="radio" name="asthama/bp" id="asyes" >
+                    <label for="asyes">Yes</label>
+                    <input type="radio" name="asthama/bp" id="asno">
+                    <label for="asno">No</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Fitness Assessment</legend>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
