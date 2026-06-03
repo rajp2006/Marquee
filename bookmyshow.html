@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking | BookMyShow Clone</title>
+    <style>
+        /* Global Settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            background-color: #333545;
+            color: #ffffff;
+            padding: 10px 50px;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f84464;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            width: 50%;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .city-select {
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .city-select option {
+            color: black;
+        }
+
+        .signin-btn {
+            background-color: #f84464;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Secondary Sub-Navigation */
+        .nav-bottom {
+            background-color: #1f2533;
+            padding: 12px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .menu-links a, .sub-menu-links a {
+            color: #cccccc;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.2s;
+        }
+
+        .menu-links a:hover, .sub-menu-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Hero Banner Advertising Section */
+        .promo-banner {
+            width: 100%;
+            background: linear-gradient(90deg, #2b2a3a 0%, #171622 100%);
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .banner-content h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            color: #f84464;
+            font-weight: bold;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: #f84464;
+            text-decoration: none;
+        }
+
+        /* Movie Display Card Layout Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 320px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            font-weight: bold;
+            position: relative;
+        }
+
+        /* Temporary solid colors substituting for local image pathways */
+        .poster-1 { background: linear-gradient(135deg, #f57c00, #ffb74d); }
+        .poster-2 { background: linear-gradient(135deg, #d32f2f, #ef5350); }
+        .poster-3 { background: linear-gradient(135deg, #388e3c, #81c784); }
+        .poster-4 { background: linear-gradient(135deg, #1976d2, #64b5f6); }
+
+        .movie-info {
+            padding: 15px;
+        }
+
+        .movie-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-genre {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Footer Element */
+        footer {
+            background-color: #31333f;
+            color: #b2b3b9;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        footer .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header>
+        <div class="nav-top">
+            <div class="logo">BookMyShow</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities">
+            </div>
+            <div class="nav-right">
+                <select class="city-select">
+                    <option value="mumbai">Mumbai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="bengaluru">Bengaluru</option>
+                    <option value="hyderabad">Hyderabad</option>
+                </select>
+                <button class="signin-btn">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-Navigation Strip -->
+    <nav class="nav-bottom">
+        <div class="menu-links">
+            <a href="#">Movies</a>
+            <a href="#">Stream</a>
+            <a href="#">Events</a>
+            <a href="#">Plays</a>
+            <a href="#">Sports</a>
+            <a href="#">Activities</a>
+        </div>
+        <div class="sub-menu-links">
+            <a href="#">ListYourShow</a>
+            <a href="#">Corporates</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+        </div>
+    </nav>
+
+    <!-- Promotional Area -->
+    <section class="promo-banner">
+        <div class="banner-content">
+            <h1>Endless Entertainment Awaits</h1>
+            <p>Book tickets for your favorite cinematic experiences today!</p>
+        </div>
+    </section>
+
+    <!-- Movies Section Content Grid -->
+    <main class="main-container">
+        <div class="section-title">
+            Recommended Movies
+            <a href="#">See All &rsaquo;</a>
+        </div>
+
+        <div class="movie-grid">
+            <!-- Movie 1 -->
+            <div class="movie-card">
+                <div class="movie-poster poster-1">Action Poster</div>
+                <div class="movie-info">
+                    <div class="movie-name">The Crimson Shadow</div>
+                    <div class="movie-genre">Action/Thriller</div>
+                </div>
+            </div>
+
+            <!-- Movie 2 -->
+            <div class="movie-card">
+                <div class="movie-poster poster-2">Sci-Fi Poster</div>
+                <div class="movie-info">
+                    <div class="movie-name">Cyberverse 2099</div>
+                    <div class="movie-genre">Sci-Fi/Adventure</div>
+                </div>
+            </div>
+
+            <!-- Movie 3 -->
+            <div class="movie-card">
+                <div class="movie-poster poster-3">Comedy Poster</div>
+                <div class="movie-info">
+                    <div class="movie-name">Laugh Out Loud</div>
+                    <div class="movie-genre">Comedy/Drama</div>
+                </div>
+            </div>
+
+            <!-- Movie 4 -->
+            <div class="movie-card">
+                <div class="movie-poster poster-4">Horror Poster</div>
+                <div class="movie-info">
+                    <div class="movie-name">Whispers in Dark</div>
+                    <div class="movie-genre">Horror/Mystery</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="footer-logo">BookMyShow</div>
+        <p>&copy; 2026 Entertainment ticketing application development demo project.</p>
+    </footer>
+
+</body>
+</html>
